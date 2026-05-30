@@ -1,5 +1,5 @@
 ---
-// Swapped to your local image
+// Swapped to your local uploaded image
 const aboutImage = '/images/about.jpg'; 
 
 const icons = {
@@ -7,16 +7,16 @@ const icons = {
 };
 ---
 
-<section id="about" class="py-24 md:py-32 bg-[#edeae3] relative z-10 overflow-hidden">
+<section id="about" class="py-24 md:py-32 bg-white relative z-10 overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 md:px-8">
     
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
       
       <div class="relative fade-up-element">
-        <div class="absolute -inset-4 bg-slate-200 z-0 transform -skew-y-2"></div>
+        <div class="absolute -inset-4 bg-slate-100 z-0 transform -skew-y-2"></div>
         <img 
           src={aboutImage} 
-          alt="R Penfold Drive Revive Working on Site" 
+          alt="JMS Multi-Service Solutions Working on Site" 
           class="relative z-10 w-full h-[400px] md:h-[500px] lg:h-[650px] object-cover border-l-8 border-brand-primary shadow-2xl"
         />
         <div class="absolute -bottom-6 -right-6 bg-brand-deep text-white p-6 shadow-xl z-20 flex flex-col items-center justify-center border-b-4 border-brand-accent hidden md:flex">
@@ -26,45 +26,40 @@ const icons = {
       </div>
 
       <div class="fade-up-element delay-100">
-        <h2 class="text-sm font-black uppercase tracking-[0.2em] text-brand-primary mb-2">About R Penfold Drive Revive</h2>
+        <h2 class="text-sm font-black uppercase tracking-[0.2em] text-brand-primary mb-2">About JMS Solutions</h2>
         <h3 class="text-4xl md:text-5xl font-black text-brand-deep uppercase tracking-tighter mb-6 leading-tight">
-          "Do What You Love, <br/><span class="text-brand-accent">Love What You Do."</span>
+          One Call. <br/><span class="text-brand-accent">Complete Solutions.</span>
         </h3>
         <p class="text-slate-500 font-medium text-lg leading-relaxed mb-6">
-          We are a fully established, licensed, and insured property maintenance company serving Hull, Doncaster, and the wider Yorkshire area. Our reputation is built on a simple premise: turning up on time, delivering exceptional quality, and offering prices that won't be beaten.
+          We are a fully insured, professional property maintenance company serving Hull, East Riding, and North Lincolnshire. Our reputation is built on hard work, arriving on time, and delivering exceptional results for both domestic and commercial properties.
         </p>
         <p class="text-slate-500 font-medium text-lg leading-relaxed mb-8">
-          As we like to say, "If you pay peanuts, you get monkeys." We pride ourselves on rescuing botched jobs from cheaper contractors and doing it right the first time. From deep-cleaning driveways to full roof tile replacements, our fast, friendly, and trustworthy team handles every project with pride.
+          We take pride in turning overgrown, unmanageable outdoor spaces back into clean, tidy areas you can enjoy. From regular garden maintenance and powerful jet washing to handyman repairs and gutter clearing, our friendly team is ready to help bring your property back to life.
         </p>
         
         <ul class="space-y-4 font-bold text-brand-deep mb-10">
-          <li class="flex items-center gap-3"><span class="text-brand-primary"><Fragment set:html={icons.check} /></span> Registered, Fully Licensed & Insured</li>
-          <li class="flex items-center gap-3"><span class="text-brand-primary"><Fragment set:html={icons.check} /></span> All Documents & Invoices Provided</li>
-          <li class="flex items-center gap-3"><span class="text-brand-primary"><Fragment set:html={icons.check} /></span> We Arrange a Time & Arrive on Time</li>
+          <li class="flex items-center gap-3"><span class="text-brand-primary"><Fragment set:html={icons.check} /></span> Reliable, Professional & Fully Insured</li>
+          <li class="flex items-center gap-3"><span class="text-brand-primary"><Fragment set:html={icons.check} /></span> Free, No-Obligation Quotes</li>
+          <li class="flex items-center gap-3"><span class="text-brand-primary"><Fragment set:html={icons.check} /></span> Domestic & Commercial Services</li>
         </ul>
 
-        <button class="about-quote-btn bg-brand-deep text-white px-10 py-5 font-black uppercase text-sm tracking-[0.2em] hover:bg-brand-primary transition-all shadow-[6px_6px_0px_#ffcc00] cursor-pointer border border-transparent">
+        <button class="about-quote-btn bg-brand-deep text-white px-10 py-5 font-black uppercase text-sm tracking-[0.2em] hover:bg-brand-primary transition-all shadow-[6px_6px_0px_#39a9f5] cursor-pointer border border-transparent">
           Get Your Free Quote
         </button>
       </div>
 
     </div>
 
+    <!-- Stats Section -->
     <div id="stats-section" class="bg-brand-deep text-white p-10 md:p-16 shadow-2xl border-t-4 border-brand-primary fade-up-element delay-200">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/10">
         
         <div class="flex flex-col items-center">
           <div class="text-4xl md:text-5xl font-black text-brand-accent mb-2 flex">
-            <span class="stat-number" data-target="500">1</span><span class="text-white">+</span>
+            <!-- Updated to 100+ to better reflect a growing business -->
+            <span class="stat-number" data-target="50">1</span><span class="text-white">+</span>
           </div>
-          <span class="text-xs md:text-sm font-bold uppercase tracking-widest text-slate-400">Driveways Cleaned</span>
-        </div>
-
-        <div class="flex flex-col items-center">
-          <div class="text-4xl md:text-5xl font-black text-brand-accent mb-2 flex">
-            <span class="stat-number" data-target="350">1</span><span class="text-white">+</span>
-          </div>
-          <span class="text-xs md:text-sm font-bold uppercase tracking-widest text-slate-400">Roofs Repaired</span>
+          <span class="text-xs md:text-sm font-bold uppercase tracking-widest text-slate-400">Properties Maintained</span>
         </div>
 
         <div class="flex flex-col items-center">
@@ -79,6 +74,13 @@ const icons = {
             <span class="stat-number" data-target="5">1</span><span class="text-white">★</span>
           </div>
           <span class="text-xs md:text-sm font-bold uppercase tracking-widest text-slate-400">Customer Reviews</span>
+        </div>
+
+        <div class="flex flex-col items-center">
+          <div class="text-4xl md:text-5xl font-black text-brand-primary mb-2 flex">
+            <span class="stat-number" data-target="30">1</span><span class="text-white">%</span>
+          </div>
+          <span class="text-xs md:text-sm font-bold uppercase tracking-widest text-slate-400">Off First Service*</span>
         </div>
 
       </div>

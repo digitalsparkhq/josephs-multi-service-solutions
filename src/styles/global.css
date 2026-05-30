@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  /* The deep, heavy outline color from the logo (great for dark sections/footers) */
-  --color-brand-deep: #0f172a; 
+  /* A deep, dark slate to act as the background for the header/footer so the white logo text pops */
+  --color-brand-deep: #111827; 
   
-  /* The vibrant water-blue from the "DRIVE" text */
-  --color-brand-primary: #0073e6; 
+  /* The vibrant leaf green from the "JMS" text and the leaves */
+  --color-brand-primary: #8ebe29; 
   
-  /* The energetic yellow/gold from the "REVIVE" text */
-  --color-brand-accent: #ffcc00; 
+  /* The bright blue from the jet wash water spray to use for high-contrast accents/buttons */
+  --color-brand-accent: #39a9f5; 
   
   /* A crisp gray for body text and professional spacing */
   --color-clean-gray: #475569; 

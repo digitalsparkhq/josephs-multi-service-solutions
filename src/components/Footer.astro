@@ -1,17 +1,20 @@
 ---
 const currentYear = new Date().getFullYear();
 
-// Updated links for R Penfold Drive Revive
-const facebookLink = "https://www.facebook.com/people/R-Penfold-Drive-revive/61584586783031/";
-const whatsappLink = "https://wa.me/447785689946";
+// Updated links for JMS Multi-Service Solutions
+const facebookLink = "https://www.facebook.com/people/Josephs-Multi-Service-Solutions/61590378479449/";
+const instagramLink = "https://www.instagram.com/jms_solutions_uk";
+const tiktokLink = "https://www.tiktok.com/@jms_solutions_uk";
+const whatsappLink = "https://wa.me/447518872477";
 const agencyLink = "https://digitalsparkhq.com/";
 
-// Changed 'stroke="white"' to 'stroke="currentColor"' for easier hover styling
 const icons = {
   phone: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>`,
   mail: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>`,
   map: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>`,
   facebook: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>`,
+  instagram: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>`,
+  tiktok: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>`,
   whatsapp: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-10.6 8.38 8.38 0 0 1 3.8.9L21 4.5z"/><path d="M15.5 13.5l-1.5-1.5M10.5 8.5l-1.5-1.5"/></svg>`
 };
 ---
@@ -24,10 +27,10 @@ const icons = {
       
       <div class="lg:col-span-1">
         <div class="mb-6 flex justify-center md:justify-start">
-           <img src="/images/logo.png" alt="R Penfold Drive Revive Logo" class="h-16 w-auto object-contain" />
+           <img src="/images/logo.png" alt="JMS Multi-Service Solutions Logo" class="h-16 w-auto object-contain" />
         </div>
         <p class="text-slate-300 font-medium leading-relaxed">
-          Premier exterior cleaning, block paving, and roof repair specialist. Built on quality workmanship and unbeatable prices.
+          Reliable domestic and commercial property services. From garden maintenance and jet washing to handyman support—One call. Complete solutions.
         </p>
       </div>
 
@@ -48,15 +51,15 @@ const icons = {
           <li class="flex flex-col md:flex-row items-center md:items-start gap-4">
             <span class="mt-1 text-brand-primary"><Fragment set:html={icons.phone} /></span>
             <div>
-              <p class="text-xs font-black uppercase tracking-widest text-slate-400 mb-1">Call Robert</p>
-              <a href="tel:07785689946" class="text-lg font-bold hover:text-brand-primary transition-colors">07785 689946</a>
+              <p class="text-xs font-black uppercase tracking-widest text-slate-400 mb-1">Call Joseph</p>
+              <a href="tel:07518872477" class="text-lg font-bold hover:text-brand-primary transition-colors">07518 872477</a>
             </div>
           </li>
           <li class="flex flex-col md:flex-row items-center md:items-start gap-4">
             <span class="mt-1 text-brand-primary"><Fragment set:html={icons.mail} /></span>
             <div>
               <p class="text-xs font-black uppercase tracking-widest text-slate-400 mb-1">Email Us</p>
-              <a href="mailto:penfoldrobert3@gmail.com" class="font-bold hover:text-brand-primary transition-colors text-sm break-all">penfoldrobert3@gmail.com</a>
+              <a href="mailto:jmssolutionsuk@gmail.com" class="font-bold hover:text-brand-primary transition-colors text-sm break-all">jmssolutionsuk@gmail.com</a>
             </div>
           </li>
         </ul>
@@ -67,18 +70,24 @@ const icons = {
         <div class="flex flex-col md:flex-row items-center md:items-start gap-4 mb-8">
           <span class="mt-1 text-brand-primary"><Fragment set:html={icons.map} /></span>
           <div>
-            <p class="font-bold">Sutton Rd, Doncaster</p>
-            <p class="text-slate-300 text-sm mt-2 font-medium">Proudly serving Hull, Doncaster, and the wider Yorkshire area.</p>
+            <p class="font-bold">Kingston upon Hull, UK</p>
+            <p class="text-slate-300 text-sm mt-2 font-medium">Covering Hessle, Barton Upon Humber, Hull, East Riding & North Lincolnshire.</p>
           </div>
         </div>
 
         <div class="pl-0 md:pl-9">
           <h4 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-4">Connect With Us</h4>
-          <div class="flex justify-center md:justify-start gap-4">
-            <a href={facebookLink} target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-brand-primary hover:border-brand-primary transition-all text-white">
+          <div class="flex justify-center md:justify-start gap-3 flex-wrap">
+            <a href={facebookLink} target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-brand-primary hover:border-brand-primary transition-all text-white" title="Facebook">
               <Fragment set:html={icons.facebook} />
             </a>
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-green-600 hover:border-green-600 transition-all text-white">
+            <a href={instagramLink} target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-pink-600 hover:border-pink-600 transition-all text-white" title="Instagram">
+              <Fragment set:html={icons.instagram} />
+            </a>
+            <a href={tiktokLink} target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-black hover:border-black transition-all text-white" title="TikTok">
+              <Fragment set:html={icons.tiktok} />
+            </a>
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-green-600 hover:border-green-600 transition-all text-white" title="WhatsApp">
               <Fragment set:html={icons.whatsapp} />
             </a>
           </div>
@@ -89,7 +98,7 @@ const icons = {
 
     <div class="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
       <p class="text-slate-400 text-xs font-bold uppercase tracking-widest text-center md:text-left">
-        &copy; {currentYear} R Penfold Drive Revive.
+        &copy; {currentYear} JMS Multi-Service Solutions.
       </p>
       <div class="flex items-center gap-6 text-xs font-bold uppercase tracking-widest text-slate-400">
          <p>Website by <a href={agencyLink} target="_blank" class="text-white hover:text-brand-primary transition-colors">Digital Spark HQ</a></p>

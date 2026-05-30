@@ -1,11 +1,11 @@
 ---
 const images = [
-  { src: "/images/gallery1.jpeg", alt: "Driveway cleaning and restoration project" },
-  { src: "/images/gallery2.jpeg", alt: "Block paving repair and sealing" },
-  { src: "/images/gallery3.jpeg", alt: "Roof tile repair and moss removal" },
-  { src: "/images/gallery4.jpeg", alt: "Patio deep cleaning and revival" },
-  { src: "/images/gallery5.jpg", alt: "Decking pressure washing and treatment" },
-  { src: "/images/gallery6.jpg", alt: "Exterior property maintenance in Hull" }
+  { src: "/images/hero1.jpg", alt: "Garden clearance and maintenance project" },
+  { src: "/images/hero2.jpg", alt: "Jet washing and driveway cleaning" },
+  { src: "/images/gallery1.jpg", alt: "Overgrown garden transformation" },
+  { src: "/images/gallery2.jpg", alt: "Handyman and property repairs" },
+  { src: "/images/gallery3.jpg", alt: "Gutter cleaning and roofline maintenance" },
+  { src: "/images/hero3.jpg", alt: "Full property exterior clean and tidy up" }
 ];
 
 const icons = {
@@ -36,13 +36,13 @@ const icons = {
       </h3>
       <div class="w-24 h-2 bg-brand-primary mx-auto mb-6"></div>
       <p class="text-slate-500 font-bold max-w-2xl mx-auto md:text-lg">
-        See the transformative results of our driveway cleaning, block paving, and roof repair projects across Hull and Yorkshire.
+        See the transformative results of our garden clearances, jet washing, and property maintenance projects across East Riding & North Lincs.
       </p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
       {images.map((img, index) => (
-        <div class={`relative aspect-[4/3] overflow-hidden group cursor-pointer bg-slate-100 border-2 border-slate-200 shadow-[8px_8px_0px_#e2e8f0] hover:shadow-[12px_12px_0px_#0073e6] hover:border-brand-primary transition-all duration-300 fade-up-element delay-${(index % 3) * 100 + 100}`}>
+        <div class={`relative aspect-[4/3] overflow-hidden group cursor-pointer bg-slate-100 border-2 border-slate-200 shadow-[8px_8px_0px_#e2e8f0] hover:shadow-[12px_12px_0px_#8ebe29] hover:border-brand-primary transition-all duration-300 fade-up-element delay-${(index % 3) * 100 + 100}`}>
           <img 
             src={img.src} 
             alt={img.alt} 

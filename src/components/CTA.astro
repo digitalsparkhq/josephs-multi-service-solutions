@@ -1,29 +1,33 @@
 ---
-// A beautiful, wide shot of a pristine home exterior
-const ctaImage = 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920&auto=format&fit=crop';
+// Swapped to your local hero2 image
+const ctaImage = '/images/hero2.jpg';
 ---
 
 <section class="relative py-24 md:py-32 bg-fixed bg-center bg-cover overflow-hidden" style={`background-image: url('${ctaImage}');`}>
   
+  <!-- Deep Slate Overlay to make the text pop -->
   <div class="absolute inset-0 bg-brand-deep/85 mix-blend-multiply z-0"></div>
 
+  <!-- Content Container -->
   <div class="relative z-10 max-w-4xl mx-auto px-4 md:px-8 text-center fade-up-element">
     
     <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-6 leading-tight">
-      Ready to Bring Your <span class="text-brand-accent">Driveway & Roof</span> Back to Life?
+      Ready to Transform Your <span class="text-brand-primary">Property & Garden</span>?
     </h2>
     
-    <div class="w-24 h-2 bg-brand-primary mx-auto mb-6"></div>
+    <div class="w-24 h-2 bg-brand-accent mx-auto mb-6"></div>
     
     <p class="text-lg md:text-xl font-bold text-slate-300 mb-10 max-w-2xl mx-auto">
-      Don't settle for "monkeys" doing half a job. Get premium exterior cleaning and repairs from Hull's most trusted specialists. 
+      One call. Complete solutions. Get premium garden maintenance, jet washing, and handyman services across East Riding & North Lincs. 
     </p>
 
     <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-      <a href="tel:07785689946" class="w-full sm:w-auto bg-brand-accent text-brand-deep px-10 py-5 font-black uppercase text-sm tracking-[0.2em] hover:bg-brand-primary hover:text-white transition-all shadow-[6px_6px_0px_rgba(0,0,0,0.5)]">
-        Call: 07785 689946
+      <!-- Main Call Button -->
+      <a href="tel:07518872477" class="w-full sm:w-auto bg-brand-primary text-white px-10 py-5 font-black uppercase text-sm tracking-[0.2em] hover:bg-brand-accent transition-all shadow-[6px_6px_0px_#111827]">
+        Call: 07518 872477
       </a>
       
+      <!-- Secondary Quote Button -->
       <button id="ctaQuoteBtn" class="w-full sm:w-auto bg-transparent border-4 border-white text-white px-10 py-4 font-black uppercase text-sm tracking-[0.2em] hover:bg-white hover:text-brand-deep transition-all cursor-pointer">
         Get a Free Quote
       </button>

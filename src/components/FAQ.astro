@@ -1,0 +1,65 @@
+---
+const faqs = [
+  {
+    q: "What areas do you cover?",
+    a: "We proudly serve the wider Hull, East Riding, and North Lincolnshire areas, including Hessle and Barton Upon Humber."
+  },
+  {
+    q: "Are you fully insured?",
+    a: "Yes, we are a professional, fully insured business. We take pride in delivering work that is both reliable and safe for your peace of mind."
+  },
+  {
+    q: "Do you offer free quotes?",
+    a: "Absolutely! We provide free, no-obligation quotes for all domestic and commercial jobs. You can message us via WhatsApp or email to arrange a site visit."
+  },
+  {
+    q: "Do you offer ongoing maintenance plans?",
+    a: "Yes, we do. Many of our customers opt for regular maintenance plans to keep their gardens and properties looking pristine all year round."
+  },
+  {
+    q: "Are you available for emergency jobs?",
+    a: "We do our absolute best to accommodate emergency requests, such as urgent garden clearances or immediate property repairs. The best way to get a quick response is to call us directly."
+  }
+];
+---
+
+<section id="faq" class="py-20 bg-slate-50 px-4">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-black text-brand-deep uppercase tracking-tighter mb-12 text-center">
+      Frequently Asked <span class="text-brand-primary">Questions</span>
+    </h2>
+    
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <div class="bg-white border-2 border-slate-200 overflow-hidden">
+          <button class="faq-trigger w-full p-6 text-left flex justify-between items-center font-bold text-brand-deep uppercase tracking-wider hover:bg-slate-50 transition-colors cursor-pointer">
+            {faq.q}
+            <span class="text-brand-primary font-black text-xl">+</span>
+          </button>
+          <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <p class="p-6 pt-0 text-slate-600 font-medium leading-relaxed">{faq.a}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const triggers = document.querySelectorAll('.faq-trigger');
+  
+  triggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const content = trigger.nextElementSibling as HTMLElement;
+      const isOpen = content.style.maxHeight !== '0px' && content.style.maxHeight !== '';
+      
+      // Close all other FAQs
+      document.querySelectorAll('.faq-content').forEach((el) => {
+        (el as HTMLElement).style.maxHeight = '0px';
+      });
+
+      // Toggle current
+      content.style.maxHeight = isOpen ? '0px' : content.scrollHeight + 'px';
+    });
+  });
+</script>
