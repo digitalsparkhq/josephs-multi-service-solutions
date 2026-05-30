@@ -1,0 +1,77 @@
+---
+// A beautiful, wide shot of a pristine home exterior
+const ctaImage = 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920&auto=format&fit=crop';
+---
+
+<section class="relative py-24 md:py-32 bg-fixed bg-center bg-cover overflow-hidden" style={`background-image: url('${ctaImage}');`}>
+  
+  <div class="absolute inset-0 bg-brand-deep/85 mix-blend-multiply z-0"></div>
+
+  <div class="relative z-10 max-w-4xl mx-auto px-4 md:px-8 text-center fade-up-element">
+    
+    <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-6 leading-tight">
+      Ready to Bring Your <span class="text-brand-accent">Driveway & Roof</span> Back to Life?
+    </h2>
+    
+    <div class="w-24 h-2 bg-brand-primary mx-auto mb-6"></div>
+    
+    <p class="text-lg md:text-xl font-bold text-slate-300 mb-10 max-w-2xl mx-auto">
+      Don't settle for "monkeys" doing half a job. Get premium exterior cleaning and repairs from Hull's most trusted specialists. 
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+      <a href="tel:07785689946" class="w-full sm:w-auto bg-brand-accent text-brand-deep px-10 py-5 font-black uppercase text-sm tracking-[0.2em] hover:bg-brand-primary hover:text-white transition-all shadow-[6px_6px_0px_rgba(0,0,0,0.5)]">
+        Call: 07785 689946
+      </a>
+      
+      <button id="ctaQuoteBtn" class="w-full sm:w-auto bg-transparent border-4 border-white text-white px-10 py-4 font-black uppercase text-sm tracking-[0.2em] hover:bg-white hover:text-brand-deep transition-all cursor-pointer">
+        Get a Free Quote
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .fade-up-element {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .fade-up-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  // Handle the Fade-Up Animation
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target); 
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.fade-up-element').forEach((el) => {
+    observer.observe(el);
+  });
+
+  // Handle Quote Button Click
+  const ctaQuoteBtn = document.getElementById('ctaQuoteBtn');
+  ctaQuoteBtn?.addEventListener('click', () => {
+    const modal = document.getElementById('quoteModal');
+    if (modal) {
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+</script>

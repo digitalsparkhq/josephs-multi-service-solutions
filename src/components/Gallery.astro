@@ -1,0 +1,131 @@
+---
+const images = [
+  { src: "/images/gallery1.jpeg", alt: "Driveway cleaning and restoration project" },
+  { src: "/images/gallery2.jpeg", alt: "Block paving repair and sealing" },
+  { src: "/images/gallery3.jpeg", alt: "Roof tile repair and moss removal" },
+  { src: "/images/gallery4.jpeg", alt: "Patio deep cleaning and revival" },
+  { src: "/images/gallery5.jpg", alt: "Decking pressure washing and treatment" },
+  { src: "/images/gallery6.jpg", alt: "Exterior property maintenance in Hull" }
+];
+
+const icons = {
+  zoom: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>`,
+  close: `<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`
+};
+---
+
+<section id="gallery" class="py-24 md:py-32 bg-white relative z-10 overflow-hidden">
+  
+  <div class="absolute inset-0 pointer-events-none z-0" style="mask-image: linear-gradient(to bottom, black 85%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="clean-gallery-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+          <path d="M0 100 V 50 Q 25 25 50 50 T 100 50 V 100 z" fill="none" stroke="#f1f5f9" stroke-width="1" opacity="0.5"/>
+          <circle cx="50" cy="50" r="1.5" fill="#e2e8f0"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#clean-gallery-pattern)" />
+    </svg>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+    <div class="text-center mb-16 fade-up-element">
+      <h2 class="text-sm font-black uppercase tracking-[0.2em] text-brand-primary mb-2">Our Recent Work</h2>
+      <h3 class="text-4xl md:text-5xl font-black text-brand-deep uppercase tracking-tighter mb-6">
+        Project <span class="text-brand-accent">Gallery</span>
+      </h3>
+      <div class="w-24 h-2 bg-brand-primary mx-auto mb-6"></div>
+      <p class="text-slate-500 font-bold max-w-2xl mx-auto md:text-lg">
+        See the transformative results of our driveway cleaning, block paving, and roof repair projects across Hull and Yorkshire.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+      {images.map((img, index) => (
+        <div class={`relative aspect-[4/3] overflow-hidden group cursor-pointer bg-slate-100 border-2 border-slate-200 shadow-[8px_8px_0px_#e2e8f0] hover:shadow-[12px_12px_0px_#0073e6] hover:border-brand-primary transition-all duration-300 fade-up-element delay-${(index % 3) * 100 + 100}`}>
+          <img 
+            src={img.src} 
+            alt={img.alt} 
+            class="gallery-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            data-full-src={img.src} 
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-brand-deep/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <div class="text-brand-accent transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+              <Fragment set:html={icons.zoom} />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div id="galleryLightbox" class="fixed inset-0 z-[100] bg-brand-deep/95 backdrop-blur-md hidden flex items-center justify-center opacity-0 transition-opacity duration-300">
+    <button id="closeLightboxBtn" class="absolute top-6 right-6 text-white hover:text-brand-accent transition-colors z-[110] cursor-pointer">
+      <Fragment set:html={icons.close} />
+    </button>
+    <img id="lightboxImage" src="" alt="Expanded View" class="max-w-[90vw] max-h-[90vh] object-contain shadow-2xl scale-95 transition-transform duration-300" />
+  </div>
+</section>
+
+<style>
+  .fade-up-element { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+  .fade-up-element.is-visible { opacity: 1; transform: translateY(0); }
+  .delay-100 { transition-delay: 100ms; }
+  .delay-200 { transition-delay: 200ms; }
+  .delay-300 { transition-delay: 300ms; }
+</style>
+
+<script>
+  // 1. FADE-UP OBSERVER
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('#gallery .fade-up-element').forEach((el) => observer.observe(el));
+
+  // 2. LIGHTBOX SCRIPT
+  const lightbox = document.getElementById('galleryLightbox');
+  const lightboxImage = document.getElementById('lightboxImage') as HTMLImageElement | null;
+  const closeBtn = document.getElementById('closeLightboxBtn');
+  const galleryImgs = document.querySelectorAll('.gallery-img');
+
+  const openLightbox = (src: string) => {
+    if (lightbox && lightboxImage) {
+      lightboxImage.src = src;
+      lightbox.classList.remove('hidden');
+      setTimeout(() => {
+        lightbox.classList.remove('opacity-0');
+        lightboxImage.classList.replace('scale-95', 'scale-100');
+      }, 10);
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  const closeLightbox = () => {
+    if (lightbox && lightboxImage) {
+      lightbox.classList.add('opacity-0');
+      lightboxImage.classList.replace('scale-100', 'scale-95');
+      setTimeout(() => {
+        lightbox.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }, 300);
+    }
+  };
+
+  galleryImgs.forEach(img => {
+    const parent = img.parentElement;
+    const fullSrc = img.getAttribute('data-full-src');
+    if (parent && fullSrc) {
+      parent.addEventListener('click', () => openLightbox(fullSrc));
+    }
+  });
+
+  closeBtn?.addEventListener('click', closeLightbox);
+  lightbox?.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+</script>

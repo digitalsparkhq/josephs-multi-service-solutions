@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  /* The deep, heavy outline color from the logo (great for dark sections/footers) */
+  --color-brand-deep: #0f172a; 
+  
+  /* The vibrant water-blue from the "DRIVE" text */
+  --color-brand-primary: #0073e6; 
+  
+  /* The energetic yellow/gold from the "REVIVE" text */
+  --color-brand-accent: #ffcc00; 
+  
+  /* A crisp gray for body text and professional spacing */
+  --color-clean-gray: #475569; 
+  
+  --font-display: "Montserrat", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-display);
+}
