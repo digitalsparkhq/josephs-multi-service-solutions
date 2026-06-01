@@ -5,9 +5,93 @@ import QuoteForm from '../components/QuoteForm.astro';
 
 interface Props {
   title: string;
+  noindex?: boolean;
 }
 
-const { title } = Astro.props;
+// Default noindex to false, so pages index normally unless specified otherwise
+const { title, noindex = false } = Astro.props;
+
+// Live Site Info
+const siteUrl = "https://jmsmultiservicesolutions.co.uk";
+const currentPath = Astro.url.pathname;
+const canonicalUrl = `${siteUrl}${currentPath === '/' ? '' : currentPath}`;
+
+// Structured Data - Local Business
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "JMS Multi-Service Solutions",
+  "image": `${siteUrl}/images/logo.png`,
+  "@id": siteUrl,
+  "url": siteUrl,
+  "telephone": "+447518872477",
+  "email": "jmssolutionsuk@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kingston upon Hull",
+    "addressCountry": "UK"
+  },
+  "areaServed": [
+    "Kingston upon Hull",
+    "East Riding of Yorkshire",
+    "North Lincolnshire",
+    "Hessle",
+    "Barton Upon Humber"
+  ],
+  "sameAs": [
+    "https://www.facebook.com/people/Josephs-Multi-Service-Solutions/61590378479449/",
+    "https://www.instagram.com/jms_solutions_uk",
+    "https://www.tiktok.com/@jms_solutions_uk"
+  ]
+};
+
+// Structured Data - Homepage FAQs
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What areas do you cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We proudly serve the wider Hull, East Riding, and North Lincolnshire areas, including Hessle and Barton Upon Humber."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you fully insured?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we are a professional, fully insured business. We take pride in delivering work that is both reliable and safe for your peace of mind."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer free quotes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! We provide free, no-obligation quotes for all domestic and commercial jobs. You can message us via WhatsApp or email to arrange a site visit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer ongoing maintenance plans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we do. Many of our customers opt for regular maintenance plans to keep their gardens and properties looking pristine all year round."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you available for emergency jobs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We do our absolute best to accommodate emergency requests, such as urgent garden clearances or immediate property repairs. The best way to get a quick response is to call us directly."
+      }
+    }
+  ]
+};
 ---
 
 <!doctype html>
@@ -15,10 +99,29 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content="One call for complete solutions. Expert garden maintenance, powerful jet washing, and reliable handyman services across East Riding & North Lincs." />
+    
+    <!-- Dynamic Robots Meta Tag (Handles the 404 Noindex logic) -->
+    {noindex ? (
+      <meta name="robots" content="noindex, nofollow" />
+    ) : (
+      <meta name="robots" content="index, follow" />
+    )}
+
+    <!-- Favicon and Canonical URL -->
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="canonical" href={canonicalUrl} />
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     
     <title>{title}</title>
+
+    <!-- Schema Injections (Only inject FAQ schema on the homepage) -->
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    {currentPath === '/' && (
+      <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    )}
   </head>
   
   <body class="bg-slate-50 antialiased">

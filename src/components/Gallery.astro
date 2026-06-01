@@ -5,7 +5,13 @@ const images = [
   { src: "/images/gallery1.jpg", alt: "Overgrown garden transformation" },
   { src: "/images/gallery2.jpg", alt: "Handyman and property repairs" },
   { src: "/images/gallery3.jpg", alt: "Gutter cleaning and roofline maintenance" },
-  { src: "/images/hero3.jpg", alt: "Full property exterior clean and tidy up" }
+  { src: "/images/hero3.jpg", alt: "Full property exterior clean and tidy up" },
+  { src: "/images/gallery4.jpg", alt: "Lawn care, strimming, and hedge trimming" },
+  { src: "/images/gallery5.jpg", alt: "Patio and block paving jet washing restoration" },
+  { src: "/images/gallery6.jpg", alt: "Fencing, decking, and handyman installation" },
+  { src: "/images/gallery7.jpg", alt: "Commercial exterior cleaning and property upkeep" },
+  { src: "/images/gallery8.jpg", alt: "Weed removal and seasonal garden tidy-up" },
+  { src: "/images/gallery9.jpg", alt: "General property maintenance and repairs" }
 ];
 
 const icons = {
@@ -40,6 +46,7 @@ const icons = {
       </p>
     </div>
 
+    <!-- The grid will automatically accommodate the 12 images, perfectly stacking in rows of 3 on desktop -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
       {images.map((img, index) => (
         <div class={`relative aspect-[4/3] overflow-hidden group cursor-pointer bg-slate-100 border-2 border-slate-200 shadow-[8px_8px_0px_#e2e8f0] hover:shadow-[12px_12px_0px_#8ebe29] hover:border-brand-primary transition-all duration-300 fade-up-element delay-${(index % 3) * 100 + 100}`}>
