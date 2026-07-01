@@ -101,23 +101,31 @@ const faqSchema = {
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content="One call for complete solutions. Expert garden maintenance, powerful jet washing, and reliable handyman services across East Riding & North Lincs." />
     
-    <!-- Dynamic Robots Meta Tag (Handles the 404 Noindex logic) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="One call for complete solutions. Expert garden maintenance, powerful jet washing, and reliable handyman services across East Riding & North Lincs." />
+    <meta property="og:image" content={`${siteUrl}/images/social.png`} />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalUrl} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content="One call for complete solutions. Expert garden maintenance, powerful jet washing, and reliable handyman services across East Riding & North Lincs." />
+    <meta property="twitter:image" content={`${siteUrl}/images/social.png`} />
+
     {noindex ? (
       <meta name="robots" content="noindex, nofollow" />
     ) : (
       <meta name="robots" content="index, follow" />
     )}
 
-    <!-- Favicon and Canonical URL -->
     <link rel="icon" type="image/png" href="/images/favicon.png" />
     <link rel="canonical" href={canonicalUrl} />
     
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     
     <title>{title}</title>
 
-    <!-- Schema Injections (Only inject FAQ schema on the homepage) -->
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
     {currentPath === '/' && (
       <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
