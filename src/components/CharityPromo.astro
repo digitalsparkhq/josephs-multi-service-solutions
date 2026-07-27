@@ -1,50 +1,63 @@
 ---
 import { Image } from 'astro:assets';
-// Importing both the original and the new medal/tracker photos
-import walkImage1 from '../assets/event.jpg'; 
-import walkImage2 from '../assets/event2.jpg'; 
+// UPDATE THIS extension if you uploaded it as offer.png instead of offer.jpg
+import offerImage from '../assets/offer.jpg'; 
 
-const justGivingLink = "https://www.justgiving.com/team/joseph-multi-service-solutions?utm_medium=TE&utm_source=CL";
+const facebookPostLink = "https://m.facebook.com/story.php?story_fbid=122118960489345949&id=61590378479449";
 ---
 
 <section class="bg-white relative overflow-hidden py-16 md:py-24 z-20 border-t-2 border-slate-100">
   <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10 fade-up-element">
     
-    <!-- Clean layout without the heavy promotional banner card -->
     <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
       
-      <!-- Images Side: Two images side-by-side, no cropping, clean subtle frames -->
-      <div class="w-full md:w-5/12 flex gap-4 justify-center shrink-0">
-        <div class="w-1/2 bg-white border-2 border-slate-200 shadow-[4px_4px_0px_#e2e8f0] p-1 md:p-2">
+      <!-- Image Side: Single image layout for the competition flyer -->
+      <div class="w-full md:w-5/12 shrink-0 flex justify-center">
+        <div class="w-full max-w-sm bg-white border-2 border-slate-200 shadow-[4px_4px_0px_#e2e8f0] p-1 md:p-2">
           <Image 
-            src={walkImage1} 
-            alt="JMS Charity Walk Event" 
-            width={400}
-            class="w-full h-auto block"
-          />
-        </div>
-        <div class="w-1/2 bg-white border-2 border-slate-200 shadow-[4px_4px_0px_#e2e8f0] p-1 md:p-2">
-          <Image 
-            src={walkImage2} 
-            alt="Trek 26 Medal and Distance Tracker" 
-            width={400}
+            src={offerImage} 
+            alt="JMS Free Jet Washing Giveaway" 
+            width={600}
             class="w-full h-auto block"
           />
         </div>
       </div>
 
-      <!-- Content Side: Updated text for past tense -->
+      <!-- Content Side: Formatted competition details -->
       <div class="w-full md:w-7/12 text-center md:text-left">
-        <h2 class="text-xs font-black uppercase tracking-[0.2em] text-brand-primary mb-2">Community Support</h2>
+        <h2 class="text-xs font-black uppercase tracking-[0.2em] text-brand-primary mb-2">Competition Update</h2>
         <h3 class="text-3xl md:text-4xl font-black text-brand-deep uppercase tracking-tighter mb-4">
-          We Completed the Trek 26 Charity Walk!
+          Win a FREE Jet Wash!
         </h3>
-        <p class="text-slate-600 font-bold mb-8 md:text-lg max-w-2xl mx-auto md:mx-0 leading-relaxed">
-          A massive thank you to everyone who supported the JMS team! We have officially completed the walk, but our donation page remains open until the end of July. We would massively appreciate any final donations to help us smash our target. Every little bit makes a difference!
+        
+        <p class="text-slate-600 font-bold mb-4 md:text-lg max-w-2xl mx-auto md:mx-0 leading-relaxed">
+          Only a few days left! Our FREE Jet Washing Giveaway will be drawn <span class="text-brand-primary">LIVE this Sunday</span>. If you haven’t entered yet, there’s still time. One lucky winner will receive a free jet wash from JMS!
+        </p>
+
+        <div class="bg-slate-50 border-l-4 border-brand-primary p-4 mb-8 text-left max-w-xl mx-auto md:mx-0 shadow-sm">
+          <p class="text-sm font-black text-brand-deep uppercase mb-2">How to enter:</p>
+          <ul class="text-slate-600 font-medium space-y-2 text-sm md:text-base">
+            <li class="flex items-center gap-2">
+              <span class="text-brand-primary">✓</span> Like the original competition post
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-brand-primary">✓</span> Follow our page
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-brand-primary">✓</span> Share the post
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-brand-primary">✓</span> Comment once you’ve done all of the above
+            </li>
+          </ul>
+        </div>
+        
+        <p class="text-slate-500 font-medium text-sm mb-6 max-w-2xl mx-auto md:mx-0">
+          Thank you to everyone who has entered so far and for all the support you’ve shown our local business – it really does mean a lot! Good luck everyone!
         </p>
         
-        <a href={justGivingLink} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brand-primary text-white px-8 py-4 font-black uppercase text-sm tracking-[0.15em] shadow-[4px_4px_0px_#111827] hover:bg-brand-accent hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all">
-          Sponsor the Team Here
+        <a href={facebookPostLink} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-[#1877F2] text-white px-8 py-4 font-black uppercase text-sm tracking-[0.15em] shadow-[4px_4px_0px_#111827] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+          Enter on Facebook Here
         </a>
       </div>
 
